@@ -101,11 +101,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Payment Failed", Toast.LENGTH_SHORT).show();
             }
         }
-
-
     }
-
-
 
 
         private String sha256(String input) {

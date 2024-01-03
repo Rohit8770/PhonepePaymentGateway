@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,34 +15,52 @@
         android:theme="@style/Theme.Payment"
         tools:targetApi="31">
         <activity
-            android:name=".PaymentActivity"
+            android:name=".RazorpayActivity"
             android:exported="true" >
-
-        </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".PaytmActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
 
-        <!--<meta-data
-            android:name="com.phonepe.android.sdk.isUAT"
-            android:value="true" />
-        <meta-data
-            android:name="com.phonepe.android.sdk.isSimulator"
-            android:value="true" />
-        <meta-data
-            android:name="com.phonepe.android.sdk.MerchandId"
-            android:value="M1A5K28YOCHA" />-->
+        </activity>
 
-        <!--<meta-data android:name="com.phonepe.android.sdk.isUAT" android:value="true"/>
-        <meta-data android:name="com.phonepe.android.sdk.isSimulator" android:value="true"/>
-        <meta-data android:name="com.phonepe.android.sdk.MerchandId" android:value="M1A5K28YOCHA"/>
--->
+
+        //Razorpay
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_test_ZcFyhwPumz5tvG"/>
+        <activity
+            android:name="com.razorpay.CheckoutActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:theme="@style/CheckoutTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <data
+                    android:host="rzp.io"
+                    android:scheme="io.rzp"/>
+            </intent-filter>
+        </activity>
+        <receiver
+            android:name="com.razorpay.RzpTokenReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="rzp.device.token.share"/>
+            </intent-filter>
+        </receiver>
+
+
     </application>
 
 </manifest>

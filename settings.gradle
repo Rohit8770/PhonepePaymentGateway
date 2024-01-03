@@ -11,9 +11,19 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
 
+        //phonepe
         maven {
             url  ='https://phonepe.mycloudrepo.io/public/repositories/phonepe-intentsdk-android'
         }
+
+        //Razorpay
+        maven {
+            url  = 'https://jitpack.io'
+        }
+        maven {
+            url  = 'https://maven.google.com'
+        }
+
     }
 }
 

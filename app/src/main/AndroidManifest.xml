@@ -15,8 +15,11 @@
         android:theme="@style/Theme.Payment"
         tools:targetApi="31">
         <activity
-            android:name=".RazorpayActivity"
-            android:exported="true" >
+            android:name=".PaytmPaymentGateway"
+            android:exported="false" />
+        <activity
+            android:name=".MargeActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,43 +27,42 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PaytmActivity"
+            android:name=".RazorpayActivity"
+            android:exported="true" />
+        <activity
+            android:name=".paypa.PaypalActivity"
             android:exported="false" />
         <activity
             android:name=".PaymentActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
-
-
-        //Razorpay
+            android:exported="true" /> <!-- Razorpay -->
         <meta-data
             android:name="com.razorpay.ApiKey"
-            android:value="rzp_test_ZcFyhwPumz5tvG"/>
+            android:value="rzp_test_ZcFyhwPumz5tvG" />
+
         <activity
             android:name="com.razorpay.CheckoutActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:theme="@style/CheckoutTheme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
+
                 <data
                     android:host="rzp.io"
-                    android:scheme="io.rzp"/>
+                    android:scheme="io.rzp" />
             </intent-filter>
         </activity>
+
         <receiver
             android:name="com.razorpay.RzpTokenReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="rzp.device.token.share"/>
+                <action android:name="rzp.device.token.share" />
             </intent-filter>
         </receiver>
-
-
     </application>
 
 </manifest>

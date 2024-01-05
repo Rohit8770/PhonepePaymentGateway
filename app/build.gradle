@@ -45,20 +45,24 @@ dependencies {
     implementation("phonepe.intentsdk.android.release:IntentSDK:2.3.0")
 
 
-    // Retrofit
+    // Retrofit PaymentActivity
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'androidx.lifecycle:lifecycle-runtime:2.6.1'
-
 
 
     //Razorpay
     implementation('com.razorpay:checkout:1.6.20')
 
 
+    //Paytm
+    // implementation 'com.paytm.appinvokesdk:appinvokesdk:2.5.0'
+    // implementation 'com.paytm:pgplussdk:1.4.5'
+    // m_Id  Simpli91697766727346
+    // m_Key  3IK#X5dswQHXnUA@
+    // url  https://localhost/farha.com/
 
-
-
-
+    //paypal
+    implementation('com.paypal.checkout:android-sdk:1.1.0')
 
 }

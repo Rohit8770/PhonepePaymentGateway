@@ -1,16 +1,15 @@
 package com.example.payment;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.phonepe.intent.sdk.api.B2BPGRequest;
 import com.phonepe.intent.sdk.api.B2BPGRequestBuilder;
@@ -20,22 +19,50 @@ import com.phonepe.intent.sdk.api.models.PhonePeEnvironment;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
-import java.util.HashMap;
-import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
+    LinearLayout lyMoney1,lyMoney2,lyMoney3;
+    EditText etMoney;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         LinearLayout button = findViewById(R.id.button);
+         etMoney = findViewById(R.id.etMoney);
+        lyMoney1 = findViewById(R.id.lyMoney1);
+        lyMoney2 = findViewById(R.id.lyMoney2);
+        lyMoney3 = findViewById(R.id.lyMoney3);
+
+        lyMoney1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String dataFromLyMoney1 = "1000";
+                etMoney.setText(dataFromLyMoney1);
+            }
+        });
+        lyMoney2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String dataFromLyMoney1 = "2000";
+                etMoney.setText(dataFromLyMoney1);
+            }
+        });
+        lyMoney3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String dataFromLyMoney1 = "3000";
+                etMoney.setText(dataFromLyMoney1);
+            }
+        });
+
+
+
 
 
         PhonePe.init(this, PhonePeEnvironment.UAT,"PGTESTPAYUAT","");

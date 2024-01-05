@@ -1,27 +1,58 @@
 package com.example.payment;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 public class RazorpayActivity extends AppCompatActivity implements PaymentResultListener {
 
+    LinearLayout lyMoney1,lyMoney2,lyMoney3;
+    EditText etMoney;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_razorpay);
 
-        Button button = findViewById(R.id.button);
+        LinearLayout button = findViewById(R.id.button1);
+        etMoney = findViewById(R.id.etMoney);
+        lyMoney1 = findViewById(R.id.lyMoney1);
+        lyMoney2 = findViewById(R.id.lyMoney2);
+        lyMoney3 = findViewById(R.id.lyMoney3);
+
+        lyMoney1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String dataFromLyMoney1 = "1000";
+                etMoney.setText(dataFromLyMoney1);
+            }
+        });
+        lyMoney2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String dataFromLyMoney1 = "2000";
+                etMoney.setText(dataFromLyMoney1);
+            }
+        });
+        lyMoney3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String dataFromLyMoney1 = "3000";
+                etMoney.setText(dataFromLyMoney1);
+            }
+        });
+
+
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,8 +60,6 @@ public class RazorpayActivity extends AppCompatActivity implements PaymentResult
                 startPayment();
             }
         });
-
-
     }
 
     public void startPayment(){

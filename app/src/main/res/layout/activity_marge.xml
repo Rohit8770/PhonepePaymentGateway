@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/ss_medium_grey"
+    tools:context=".MargeActivity">
+
+    <Button
+        android:id="@+id/btnPaytm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10ssp"
+        android:textSize="@dimen/_13ssp"
+        android:text="Paytm Payment Gateway"/>
+
+    <Button
+        android:id="@+id/btnPhonepe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10ssp"
+        android:textSize="@dimen/_12ssp"
+        android:text="PhonePe Payment Gateway"/>
+
+    <Button
+        android:id="@+id/btnRazorpay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10ssp"
+        android:textSize="@dimen/_12ssp"
+        android:text="Razorpay Payment Gateway"/>
+
+</LinearLayout>
